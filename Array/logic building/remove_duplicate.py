@@ -1,20 +1,27 @@
 class Solution:
     def removeDuplicates(self, nums) -> int:
         # get the lenght of the array
-        n = len(nums)
+        # n = len(nums)
 
-        i = 0
-        j = i+1
+        # i = 0
+        # j = i+1
 
-        while j < n:
-            if nums[i] == nums[j]:
-                j += 1
-            else:
-                nums[i+1] = nums[j]
+        # while j < n:
+        #     if nums[i] == nums[j]:
+        #         j += 1
+        #     else:
+        #         nums[i+1] = nums[j]
                 
-                i += 1
-                j += 1
-        return i+1
+        #         i += 1
+        #         j += 1
+        # return i+1
+
+        last_index = 0
+        for i in range(1, len(nums)):
+            if nums[last_index] != nums[i]:
+                last_index += 1
+                nums[last_index] = nums[i]
+        return last_index+1
         
 
 
