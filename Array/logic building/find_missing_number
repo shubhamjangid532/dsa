@@ -1,0 +1,25 @@
+class Solution:
+    def missingNumber(self, nums):
+        # find the length of the array
+        n = len(nums)
+        
+        # get the sum of of given nnumbers
+        sum_of_nums = sum(nums)
+
+        # sum of first natural number's
+        natural_number_sum = (n * (n+1)) // 2
+
+        # reutrn the missing number
+        return natural_number_sum - sum_of_nums
+
+# Main function to test the implementation
+if __name__ == "__main__":
+    nums = [0, 1, 2, 4]
+    
+    # Create an instance of the Solution class
+    solution = Solution()
+    
+    # Call the missingNumber method to find the missing number
+    ans = solution.missingNumber(nums)
+    
+    print(f"The missing number is: {ans}")
