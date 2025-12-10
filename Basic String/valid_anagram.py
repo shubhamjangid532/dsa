@@ -6,14 +6,9 @@ class Solution:
         hash_map2 = {}
 
         for idx, ch in enumerate(s):
-            if ch in hash_map1:
-                hash_map1[ch] += 1
-            else:
-                hash_map1[ch] = 1
-            if t[idx] in hash_map2:
-                hash_map2[t[idx]] += 1
-            else:
-                hash_map2[t[idx]] = 1
+            hash_map1[ch] = hash_map1.get(ch, 0) + 1 
+            hash_map2[t[idx]] = hash_map2.get(t[idx], 0) + 1
+            
         return hash_map1 == hash_map2
 
 
