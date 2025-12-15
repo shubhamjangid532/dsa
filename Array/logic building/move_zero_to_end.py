@@ -1,24 +1,31 @@
 class Solution:
     def moveZeroes(self, nums):
-        n = len(nums)
+        # n = len(nums)
 
-        j = -1
+        # j = -1
 
-        # check if we have zero in array or not
-        for i in range(n):
-            if nums[i] == 0:
-                j = i
-                break
+        # # check if we have zero in array or not
+        # for i in range(n):
+        #     if nums[i] == 0:
+        #         j = i
+        #         break
         
-        # if there is no zero in array return the array
-        if j == -1:
-            return 
+        # # if there is no zero in array return the array
+        # if j == -1:
+        #     return 
 
-        for i in range(j+1, n):
-            if nums[i] != 0:
-                nums[j] = nums[i]
-                nums[i] = 0
-                j+=1
+        # for i in range(j+1, n):
+        #     if nums[i] != 0:
+        #         nums[j] = nums[i]
+        #         nums[i] = 0
+        #         j+=1
+        
+        n = len(nums)
+        pos = 0
+        for idx in range(n):
+            if nums[idx] != 0:
+                nums[pos], nums[idx] = nums[idx], nums[pos]
+                pos += 1
     
 
 # main class
